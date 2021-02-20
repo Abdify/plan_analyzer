@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>To do</title>
+        <link rel="stylesheet" href="addTodo.css" />
+        <link rel="stylesheet" href="features.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        />
+    </head>
+    <body>
+        <main>
+            <div class="sideBar" id="sideBar">
+                <div class="features fChangeBg">
+                    <div id="colorSchemes">
+                        <div
+                            class="colorScheme"
+                            style="background-color: rgba(95, 158, 160, 0.8)"
+                        ></div>
+                        <div
+                            class="colorScheme"
+                            style="background-color: rgba(255, 99, 71, 0.8)"
+                        ></div>
+                        <div
+                            class="colorScheme"
+                            style="background-color: rgba(127, 255, 212, 0.8)"
+                        ></div>
+                        <div
+                            class="colorScheme"
+                            style="background-color: rgba(218, 165, 32, 0.8)"
+                        ></div>
+                        <div
+                            class="colorScheme"
+                            style="background-color: rgba(0, 128, 0, 0.8)"
+                        ></div>
+                    </div>
+
+                    <i class="fas fa-tint"></i><br />Background Color
+                </div>
+                <div class="features fChangeColor"><i class="fas fa-tint"></i><br />Text Color</div>
+                <div class="features"><i class="fas fa-text-height"></i><br />Font Size</div>
+                <div class="features"><i class="fas fa-level-up-alt"></i><br />UP</div>
+            </div>
+
+            <div class="todoContainer" id="todoContainer">
+                <div class="addTodo" id="addTodo">
+                    <div class="addTodoLayer">
+                        <span class="plusBtn">+</span>
+                    </div>
+                    <div class="todoInput">
+                        <label for="todoTitle">Add a title: </label>
+                        <input type="text" name="todoTitle" id="todoTitle" />
+                    </div>
+
+                    <div class="todoInput">
+                        <label for="todoTitle">Add a description: </label>
+                        <input type="text" name="todoDescription" id="todoDescription" />
+                    </div>
+
+                    <button id="addTodoBtn">Add</button>
+                </div>
+
+                <h2 style="margin-top: 50px">Your To-do List</h2>
+                <div class="displayTodo"></div>
+            </div>
+        </main>
+
+        <script src="./addTodo.js"></script>
+        <script src="./features.js"></script>
+    </body>
+</html>

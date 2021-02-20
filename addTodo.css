@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-size: 16px;
+
+    background: url("./bg.jpg");
+}
+.sideBar {
+    height: 100vh;
+    width: 20%;
+    /* background-color: cornflowerblue; */
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 0 2000px rgba(100, 148, 237, 0.2);
+    position: absolute;
+    top: 0;
+    left: -19%;
+    z-index: 99999;
+    transition: 1s all ease;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.todoContainer {
+    width: 100%;
+    min-height: 100vh;
+    /* background-color: darkcyan; */
+    transition: 1s all ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.addTodo {
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.15);
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.5s all ease;
+}
+
+.addTodoAnimation {
+    margin-top: 0;
+    height: 170px;
+    border-radius: 0px 0px 50% 50% !important;
+    transition: 0.5s all ease;
+}
+
+.addTodoLayer {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    font-size: 50px;
+    text-align: center;
+    line-height: 140px;
+    color: cadetblue;
+    background-color: black;
+
+    cursor: pointer;
+    position: absolute;
+    z-index: 999;
+}
+.plusBtn {
+    /* animation: circle ease 1s infinite; */
+    display: block;
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0deg);
+        color: cadetblue;
+    }
+    100% {
+        transform: rotate(180deg);
+        color: white;
+    }
+}
+.addTodoLayerAnimation {
+    border-radius: 0;
+    animation: slideUp 1s ease-in 0.5s normal;
+}
+@keyframes slideUp {
+    from {
+        bottom: 0;
+    }
+    to {
+        bottom: 500px;
+    }
+}
+
+.todoInput {
+    width: 100%;
+    margin: 0.5rem;
+    text-align: center;
+}
+#todoTitle,
+#todoDescription {
+    height: 40px;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    width: 50%;
+    transition: 1s all ease;
+}
+#todoTitle:focus,
+#todoDescription:focus {
+    width: 80%;
+    height: 60px;
+}
+
+label {
+    font-size: 1.2rem;
+    color: azure;
+}
+#addTodoBtn {
+    height: 30%;
+    width: 30%;
+    border-radius: 70% 70% 0 0;
+    background-color: rgba(255, 255, 255);
+    backdrop-filter: blur(10px);
+    /* box-shadow: inset 0 0 200px rgba(255, 255, 255, .5); */
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.displayTodo {
+    width: 80%;
+    margin-top: 30px;
+    padding: 1rem;
+    background-color: rgba(22, 51, 219, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 0 200px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+.todoItem {
+    width: 90%;
+    min-height: 100px;
+    margin: 10px auto;
+    padding: 1rem;
+    border-left: 10px solid black;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 0 2000px rgba(100, 148, 237, 0.2);
+    text-transform: capitalize;
+
+    position: relative;
+    transition: 0.5s all ease;
+}
+.todoItemLayer {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0;
+}
