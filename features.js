@@ -3,7 +3,7 @@ const colorSchemesContainer = document.getElementById("colorSchemes");
 const fChangeBg = document.querySelector(".fChangeBg");
 fChangeBg.addEventListener("click", () => {
     colorSchemesContainer.style.opacity = "1";
-    colorSchemesContainer.style.zIndex = '1';
+    colorSchemesContainer.style.zIndex = "1";
 });
 
 let colorSchemes = [];
@@ -12,7 +12,6 @@ document.querySelectorAll(".colorScheme").forEach((color) => {
 });
 
 const todoItems = document.querySelectorAll(".todoItem");
-
 
 displayTodoContainer.addEventListener("click", (e) => {
     if (e.target.className === "todoItemLayer") {
@@ -31,25 +30,26 @@ displayTodoContainer.addEventListener("click", (e) => {
     }
 });
 
-const addFeatures = () => {
+const addFeatures = (todoList) => {
     sideBar.addEventListener("click", (e) => {
         if (e.target.className === "colorScheme") {
             // let activeTodo = document.querySelector(".activeTodo");
 
             let todoList = JSON.parse(localStorage.getItem("todoList"));
 
-            todoItems.forEach((todo, i) => {
+            // !!!!!!!!!!!!!!! Variable value doesn't update !!!!!!!!!!!!!!!!
+            // I can't use todoItems.forEach here as without reload new todo s don't get pushed!!!!!
+            document.querySelectorAll(".todoItem").forEach((todo, i) => {
                 let todoItems = [...document.querySelectorAll(".todoItem")];
                 if (todoItems[i].classList[1] === "activeTodo") {
                     todoList[i].bgColor = e.target.style.backgroundColor;
                     localStorage.setItem("todoList", JSON.stringify(todoList));
                     displayTodo();
-                    
+                    // Here too!!!!!!!!!!!!!!!!!!
                     [...document.querySelectorAll(".todoItem")][i].classList.add("activeTodo");
                     console.log(todoItems[i]);
                 }
             });
-
 
             //activeTodo.style.backgroundColor = e.target.style.backgroundColor;
         }

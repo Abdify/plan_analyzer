@@ -38,7 +38,8 @@ const todoDescription = document.getElementById("todoDescription");
 document.getElementById("addTodoBtn").addEventListener("click", () => {
     const title = todoTitle.value;
     const description = todoDescription.value;
-    const newTodo = { title, description };
+    const bgColor = "rgba(255, 255, 255, 0.3)";
+    const newTodo = { title, description, bgColor};
 
     let todoList = [];
     if (localStorage.getItem("todoList")) {
